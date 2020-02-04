@@ -60,14 +60,20 @@ describe("Input", () => {
                 // 一个虚拟的函数
                 const callback = sinon.fake();
                 vm.$on(eventName, callback);
-                
+
                 // 定义一个事件
                 let event = new Event(eventName);
+
+                Object.defineProperty(event, "target", {
+                    value: { value: "hello" },
+                    enumerable: true
+                });
+            
                 let inputElement = vm.$el.querySelector("input");
 
                 // 触发 input 的 change 事件
                 inputElement.dispatchEvent(event);
-                expect(callback).to.have.been.called;
+                expect(callback).to.have.been.calledWith("hello");
             });
         });
     });
