@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <style>
+            .box {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div class="box">
+                <gulu-input value="input组件"></gulu-input>
+                <gulu-input value="input组件" disabled></gulu-input>
+                <gulu-input value="input组件" error="请输入"></gulu-input>
+            </div>
+            <div class="box">
+                <gulu-input @change="inputChange"></gulu-input>
+            </div>
+            <div>
+                <gulu-button
+                    icon-position="left"
+                    :loading="loading"
+                    @click="loading = !loading"
+                >
+                    保存
+                </gulu-button>
+                <gulu-button
+                    icon="settings"
+                    icon-position="left"
+                    :loading="loading"
+                    @click="loading = !loading"
+                >
+                    提交
+                </gulu-button>
+                <gulu-button icon="thumbs-up" icon-position="right" loading>
+                    点赞
+                </gulu-button>
+
+                <gulu-button icon="download" icon-position="right">
+                    下载文件
+                </gulu-button>
+
+                <gulu-button-group>
+                    <gulu-button icon="left">上一页</gulu-button>
+                    <gulu-button>第 3 页</gulu-button>
+                    <gulu-button icon="right" icon-position="right">
+                        下一页
+                    </gulu-button>
+                </gulu-button-group>
+            </div>
+        </div>
+
+        <script src="./src/main.js"></script>
+        <script src="//at.alicdn.com/t/font_1624032_2ur8x4mh3hm.js"></script>
+    </body>
+</html>
