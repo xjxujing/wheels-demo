@@ -14,6 +14,30 @@
     <body>
         <div id="app">
             <div class="box">
+                <gulu-row :gutter="20">
+                    <gulu-col :span="6">第一个</gulu-col>
+                    <gulu-col :span="6">第二个</gulu-col>
+                    <gulu-col :span="6">第三个</gulu-col>
+                    <gulu-col :span="6">第四个</gulu-col>
+                </gulu-row>
+                <gulu-row :gutter="10">
+                    <gulu-col :span="6">第一个</gulu-col>
+                    <gulu-col :span="6">第二个</gulu-col>
+                    <gulu-col :span="6">第三个</gulu-col>
+                    <gulu-col :span="6">第四个</gulu-col>
+                </gulu-row>
+                <gulu-row>
+                    <gulu-col :span="6">第一个</gulu-col>
+                    <gulu-col :span="6">第二个</gulu-col>
+                    <gulu-col :span="12">第三个</gulu-col>
+                </gulu-row>
+                <gulu-row>
+                    <gulu-col>第一个</gulu-col>
+                    <gulu-col>第二个</gulu-col>
+                </gulu-row>
+            </div>
+
+            <div class="box">
                 <gulu-input value="input组件"></gulu-input>
                 <gulu-input value="input组件" disabled></gulu-input>
                 <gulu-input value="input组件" error="请输入"></gulu-input>

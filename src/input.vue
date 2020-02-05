@@ -55,7 +55,7 @@ export default {
             box-shadow: inset 0 1px 3px $box-shadow-color;
             outline: none;
         }
-        &[disable] {
+        &[disabled] {
             border-color: #bbb;
             color: #bbb;
             cursor: not-allowed;
