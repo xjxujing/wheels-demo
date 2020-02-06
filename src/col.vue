@@ -1,8 +1,6 @@
 <template>
     <div class="gulu-col" :class="colClass" :style="colStyle">
-        <div style="border: 1px solid red">
-            <slot></slot>
-        </div>
+        <slot></slot>
     </div>
 </template>
 
@@ -48,7 +46,7 @@ export default {
                 this.offset && `offset-${offset}`,
                 ...[phone && `span-phone-${phone.span}`],
                 ...[ipad && `span-ipad-${ipad.span}`],
-                ...[narrowPc && `span-narrowPc-${narrowPc.span}`],
+                ...[narrowPc && `span-narrow-pc-${narrowPc.span}`],
                 ...[pc && `span-pc-${pc.span}`],
                 ...[widePc && `span-widePc-${widePc.span}`]
             ];
@@ -94,7 +92,7 @@ export default {
         }
     }
 
-    @media (min-width: 577px) and (max-width: 768px) {
+    @media (min-width: 577px) {
         $class-prefix: span-ipad-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
@@ -109,7 +107,7 @@ export default {
         }
     }
 
-    @media (min-width: 769px) and (max-width: 992px) {
+    @media (min-width: 769px) {
         $class-prefix: span-narrow-pc-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
@@ -124,7 +122,7 @@ export default {
         }
     }
 
-    @media (min-width: 993px) and (max-width: 1200px) {
+    @media (min-width: 993px) {
         $class-prefix: span-pc-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {

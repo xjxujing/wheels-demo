@@ -15,34 +15,30 @@
                 margin: 20px;
             }
         </style>
+        <style>
+            .demo {
+                background-color: #ccc;
+                border: 1px solid #666;
+                height: 100px;
+            }
+        </style>
     </head>
     <body>
         <div id="app">
             <div class="box">
                 <gulu-row>
-                    <gulu-col :span="6" :phone="{span: 24}" :ipad="{span: 12}">
-                        diyi
+                    <gulu-col span="24" :narrow-pc="{span: 8}">
+                        <div class="demo"></div>
                     </gulu-col>
-                    <gulu-col :span="18" :phone="{span: 24}" :ipad="{span: 12}">
-                        dier
+                    <gulu-col span="24" :narrow-pc="{span: 8}">
+                        <div class="demo"></div>
                     </gulu-col>
-                </gulu-row>
-            </div>
-            <div class="box">
-                <gulu-row>
-                    <gulu-col :span="4">
-                        <gulu-row align="center">
-                            <div>
-                                <img
-                                    style="width: 50px;"
-                                    src="https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png"
-                                    alt=""
-                                />
-                            </div>
-                        </gulu-row>
+                    <gulu-col span="24" :narrow-pc="{span: 8}">
+                        <div class="demo"></div>
                     </gulu-col>
-                    <gulu-col :span="14">输入框</gulu-col>
-                    <gulu-col :span="6">二维码</gulu-col>
+                    <gulu-col span="24" :narrow-pc="{span: 8}">
+                        <div class="demo"></div>
+                    </gulu-col>
                 </gulu-row>
             </div>
 
