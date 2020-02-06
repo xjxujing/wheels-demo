@@ -41,14 +41,14 @@ export default {
         colClass() {
             let { span, offset, phone, ipad, narrowPc, pc, widePc } = this;
             let phoneClass = [];
+            let createClass = this.createClass;
             return [
-                this.span && `span-${span}`,
-                this.offset && `offset-${offset}`,
-                ...[phone && `span-phone-${phone.span}`],
-                ...[ipad && `span-ipad-${ipad.span}`],
-                ...[narrowPc && `span-narrow-pc-${narrowPc.span}`],
-                ...[pc && `span-pc-${pc.span}`],
-                ...[widePc && `span-widePc-${widePc.span}`]
+                ...createClass({ span, offset }),
+                ...createClass(phone, "phone-"),
+                ...createClass(ipad, "ipad-"),
+                ...createClass(narrowPc, "narrow-pc-"),
+                ...createClass(pc, "pc-"),
+                ...createClass(widePc, "wide-pc-")
             ];
         },
         colStyle() {
@@ -57,6 +57,22 @@ export default {
                 paddingLeft: gutter / 2 + "px",
                 paddingRight: gutter / 2 + "px"
             };
+        }
+    },
+
+    methods: {
+        createClass(obj, string = "") {
+            if (!obj) {
+                return [];
+            }
+            let array = [];
+            if (obj.span) {
+                array.push(`span-${string}${obj.span}`);
+            }
+            if (obj.offset) {
+                array.push(`offset-${string}${obj.span}`);
+            }
+            return array;
         }
     }
 };
