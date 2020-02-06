@@ -6,6 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Document</title>
         <style>
+            img {
+                max-width: 100%;
+            }
+        </style>
+        <style>
             .box {
                 margin: 20px;
             }
@@ -14,26 +19,30 @@
     <body>
         <div id="app">
             <div class="box">
-                <gulu-row :gutter="20">
-                    <gulu-col :span="6">第一个</gulu-col>
-                    <gulu-col :span="6">第二个</gulu-col>
-                    <gulu-col :span="6">第三个</gulu-col>
-                    <gulu-col :span="6">第四个</gulu-col>
-                </gulu-row>
-                <gulu-row :gutter="10">
-                    <gulu-col :span="6">第一个</gulu-col>
-                    <gulu-col :span="6">第二个</gulu-col>
-                    <gulu-col :span="6">第三个</gulu-col>
-                    <gulu-col :span="6">第四个</gulu-col>
-                </gulu-row>
                 <gulu-row>
-                    <gulu-col :span="6">第一个</gulu-col>
-                    <gulu-col :span="6">第二个</gulu-col>
-                    <gulu-col :span="12">第三个</gulu-col>
+                    <gulu-col :span="6" :phone="{span: 24}" :ipad="{span: 12}">
+                        diyi
+                    </gulu-col>
+                    <gulu-col :span="18" :phone="{span: 24}" :ipad="{span: 12}">
+                        dier
+                    </gulu-col>
                 </gulu-row>
+            </div>
+            <div class="box">
                 <gulu-row>
-                    <gulu-col>第一个</gulu-col>
-                    <gulu-col>第二个</gulu-col>
+                    <gulu-col :span="4">
+                        <gulu-row align="center">
+                            <div>
+                                <img
+                                    style="width: 50px;"
+                                    src="https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png"
+                                    alt=""
+                                />
+                            </div>
+                        </gulu-row>
+                    </gulu-col>
+                    <gulu-col :span="14">输入框</gulu-col>
+                    <gulu-col :span="6">二维码</gulu-col>
                 </gulu-row>
             </div>
 
