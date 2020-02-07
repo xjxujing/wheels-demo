@@ -1,19 +1,7 @@
 <template>
-    <button
-        class="gulu-button"
-        :class="{ [`icon-${iconPosition}`]: true }"
-        @click="$emit('click')"
-    >
-        <gulu-icon
-            v-if="icon && !loading"
-            class="icon"
-            :icon="icon"
-        ></gulu-icon>
-        <gulu-icon
-            v-if="loading"
-            class="loading icon"
-            icon="loading"
-        ></gulu-icon>
+    <button class="gulu-button" :class="{ [`icon-${iconPosition}`]: true }" @click="$emit('click')">
+        <gulu-icon v-if="icon && !loading" class="icon" :icon="icon"></gulu-icon>
+        <gulu-icon v-if="loading" class="loading icon" icon="loading"></gulu-icon>
         <div class="gulu-button-content">
             <slot></slot>
         </div>

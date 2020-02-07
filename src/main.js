@@ -10,10 +10,10 @@ import Header from "./header";
 import Content from "./content";
 import Footer from "./footer";
 import Sider from "./sider";
+import Toast from "./toast";
+import plugin from "./plugin";
 
-import chai from "chai";
-import spies from "chai-spies";
-chai.use(spies);
+Vue.use(plugin);
 
 Vue.component("gulu-button", Button);
 Vue.component("gulu-button-group", ButtonGroup);
@@ -26,6 +26,7 @@ Vue.component("gulu-header", Header);
 Vue.component("gulu-content", Content);
 Vue.component("gulu-footer", Footer);
 Vue.component("gulu-sider", Sider);
+Vue.component("gulu-toast", Toast);
 
 new Vue({
     el: "#app",
@@ -35,9 +36,13 @@ new Vue({
 
         value: ""
     },
+    created() {},
     methods: {
         inputChange(e) {
             console.log(e.target.value);
+        },
+        showToast() {
+            this.$toast("这是个 toast!");
         }
     }
 });

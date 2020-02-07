@@ -18,7 +18,6 @@ export default {
         this.$children.forEach(vm => {
             if (vm.$options.name === "GuluSider") {
                 this.layoutClass.hasSider = true;
-                console.log(this.layoutClass);
             }
         });
     }
