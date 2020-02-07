@@ -1,7 +1,9 @@
 <template>
-    <div class="toast">
-        <slot></slot>
-<div class="line"></div>
+    <div class="toast" ref="wrapper">
+        <slot v-if="!enabelHtml"></slot>
+        <div v-else v-html="this.$slots.default[0]"></div>
+
+        <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">
             {{ closeButton.text }}
         </span>
@@ -29,12 +31,14 @@ export default {
                     callback: undefined
                 };
             }
+        },
+        enabelHtml: {
+            type: Boolean,
+            default: false
         }
     },
 
-    created() {
-        this.closeButton;
-    },
+    created() {},
 
     mounted() {
         if (this.autoClose) {
@@ -42,6 +46,9 @@ export default {
                 this.close();
             }, this.autoCloseDelay * 1000);
         }
+        this.$nextTick(() => {
+            this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height}px`;
+        });
     },
 
     methods: {
@@ -55,7 +62,7 @@ export default {
                 this.closeButton.callback(this);
             }
         },
-        log(){
+        log() {
             console.log("通过 callback 回调, 传递的 this, 然后调用了我");
         }
     }
@@ -64,11 +71,11 @@ export default {
 
 <style lang="scss" scoped>
 $font-size: 14px;
-$toast-height: 40px;
+$toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
 .toast {
     font-size: $font-size;
-    height: $toast-height;
+    min-height: $toast-min-height;
     line-height: 1.8;
     position: fixed;
     top: 0;
@@ -82,7 +89,6 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
     padding: 0 16px;
     > .line {
-        height: 100%;
         border-left: 1px solid #666;
         margin: 0 16px;
     }

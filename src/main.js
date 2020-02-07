@@ -42,7 +42,7 @@ new Vue({
             console.log(e.target.value);
         },
         showToast() {
-            this.$toast("这是个 toast!", {
+            /* this.$toast("这是个 toast!", {
                 closeButton: {
                     text: "知道了",
                     callback(toast) {
@@ -50,7 +50,8 @@ new Vue({
                         console.log("用户知道了");
                     }
                 }
-            });
+            }); */
+            this.$toast("<p><strong>hi</strong> 你好</p><p><strong>hi</strong> 你好</p>", { enabelHtml: true });
         }
     }
 });
