@@ -17,14 +17,39 @@
         </style>
         <style>
             .demo {
-                background-color: #ccc;
+                background-color: #FFC67D;
                 border: 1px solid #666;
-                height: 100px;
+                min-height: 100px;
+            }
+            .sider {
+                background-color: #e8b7ff;
+            }
+            .header {
+                min-height: 100px;
+                background-color: #EBA4A0;
+            }
+            .content {
+                min-height: 100px;
+                background-color: #9BB0E8;
+            }
+            .footer {
+                min-height: 100px;
+                background-color: #FFC67D;
             }
         </style>
     </head>
     <body>
         <div id="app">
+            <div>
+                <gulu-layout style="height: 100vh">
+                    <gulu-sider>sider</gulu-sider>
+                    <gulu-layout>
+                        <gulu-header>header</gulu-header>
+                        <gulu-content>content</gulu-content>
+                        <gulu-footer>footer</gulu-footer>
+                    </gulu-layout>
+                </gulu-footer>
+            </div>
             <div class="box">
                 <gulu-row>
                     <gulu-col span="24" :narrow-pc="{span: 8}">
