@@ -1,7 +1,7 @@
 <template>
     <div class="toast">
         <slot></slot>
-        <div class="line"></div>
+<div class="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">
             {{ closeButton.text }}
         </span>
