@@ -22,6 +22,7 @@
                 min-height: 100px;
             }
             .sider {
+                width: 200px;
                 background-color: #e8b7ff;
             }
             .header {
@@ -41,7 +42,9 @@
     <body>
         <div id="app">
             <div class="box">
-                <button @click="showToast">点击展示</button>
+                <button @click="showToast('top')">top</button>
+                <button @click="showToast('center')">center</button>
+                <button @click="showToast('bottom')">bottom</button>
             </div>
             <div>
                 <gulu-layout style="height: 100vh">

@@ -40,22 +40,18 @@ new Vue({
         inputChange(e) {
             console.log(e.target.value);
         },
-        showToast() {
-            /* this.$toast("这是个 toast!", {
+
+        showToast(position) {
+            this.$toast("这是个 toast!", {
                 closeButton: {
                     text: "知道了",
                     callback(toast) {
                         toast.log();
                         console.log("用户知道了");
                     }
-                }
-            }); */
-            this.$toast(
-                "lorm qi 确认看到收到就好发快递荆防颗粒复健科老师发的抗裂砂浆付款了地方金石可镂法律的风景京东数科龙卷疯",
-                {
-                    position: "center"
-                }
-            );
+                },
+                position: position
+            });
         }
     }
 });

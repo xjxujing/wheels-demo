@@ -1,12 +1,11 @@
 import Toast from "./toast";
 
-
 // 测试选择提交的行
 
 let currentToast;
 export default {
     install(Vue, options) {
-        Vue.prototype.$toast = function(message, propsData) {
+        Vue.prototype.$toast = function(message, propsData) {            
             if (currentToast) {
                 currentToast.close();
             }

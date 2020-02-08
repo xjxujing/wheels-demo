@@ -4,7 +4,6 @@
             <slot v-if="!enabelHtml"></slot>
             <div v-else v-html="this.$slots.default[0]"></div>
         </div>
-
         <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">
             {{ closeButton.text }}
@@ -96,13 +95,41 @@ export default {
 $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
+$animation-time: 1s;
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes slide-top {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
 .toast {
     font-size: $font-size;
     min-height: $toast-min-height;
     line-height: 1.8;
     position: fixed;
     left: 50%;
-    transform: translateX(-50%);
     display: flex;
     color: white;
     align-items: center;
@@ -110,15 +137,23 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     border-radius: 4px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
     padding: 0 16px;
+    transform: translateX(-50%);
     &.top {
         top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        animation: slide-top $animation-time;
     }
     &.bottom {
         bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        animation: slide-bottom $animation-time;
     }
     &.center {
         top: 50%;
         transform: translate(-50%, -50%);
+        animation: fade-in $animation-time;
     }
     > .message {
         padding: 10px;
