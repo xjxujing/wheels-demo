@@ -1,5 +1,8 @@
 import Toast from "./toast";
 
+
+// 测试选择提交的行
+
 let currentToast;
 export default {
     install(Vue, options) {
