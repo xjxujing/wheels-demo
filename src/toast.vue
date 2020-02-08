@@ -74,9 +74,9 @@ export default {
                 }, this.autoCloseDelay * 1000);
             }
         },
-
         close() {
             this.$el.remove();
+            this.$emit("close");
             this.$destroy();
         },
         onClickClose() {
@@ -129,6 +129,7 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     }
     > .close {
         flex-shrink: 0;
+        cursor: pointer;
     }
 }
 </style>

@@ -33,7 +33,6 @@ new Vue({
     data: {
         message: "这是 message",
         loading: false,
-
         value: ""
     },
     created() {},
