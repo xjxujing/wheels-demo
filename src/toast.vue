@@ -22,7 +22,7 @@ export default {
         },
         autoCloseDelay: {
             type: Number,
-            default: 50
+            default: 3
         },
         closeButton: {
             type: Object,
