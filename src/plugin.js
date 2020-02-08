@@ -3,13 +3,13 @@ import Toast from "./toast";
 let currentToast;
 export default {
     install(Vue, options) {
-        Vue.prototype.$toast = function(message, toastOptions) {
+        Vue.prototype.$toast = function(message, propsData) {
             if (currentToast) {
                 currentToast.close();
             }
             currentToast = createToast({
                 message,
-                toastOptions,
+                propsData,
                 Vue,
                 onClose: () => {
                     currentToast = null;
@@ -19,14 +19,10 @@ export default {
     }
 };
 
-
-function createToast({ message, toastOptions, Vue, onClose }) {
+function createToast({ message, propsData, Vue, onClose }) {
     let Constructor = Vue.extend(Toast);
-    let toast = new Constructor({
-        propsData: toastOptions
-    });
+    let toast = new Constructor({ propsData });
     toast.$slots.default = [message];
-
     toast.$mount();
     toast.$on("close", onClose);
     document.body.appendChild(toast.$el);
