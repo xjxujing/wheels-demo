@@ -51,7 +51,9 @@ new Vue({
                     }
                 }
             }); */
-            this.$toast("<p><strong>hi</strong> 你好</p><p><strong>hi</strong> 你好</p>", { enabelHtml: true });
+            this.$toast(
+                "lorm qi 确认看到收到就好发快递荆防颗粒复健科老师发的抗裂砂浆付款了地方金石可镂法律的风景京东数科龙卷疯"
+            );
         }
     }
 });

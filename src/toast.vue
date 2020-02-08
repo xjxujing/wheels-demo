@@ -1,7 +1,9 @@
 <template>
     <div class="toast" ref="wrapper">
-        <slot v-if="!enabelHtml"></slot>
-        <div v-else v-html="this.$slots.default[0]"></div>
+        <div class="message">
+            <slot v-if="!enabelHtml"></slot>
+            <div v-else v-html="this.$slots.default[0]"></div>
+        </div>
 
         <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">
@@ -38,20 +40,27 @@ export default {
         }
     },
 
-    created() {},
-
     mounted() {
-        if (this.autoClose) {
-            setTimeout(() => {
-                this.close();
-            }, this.autoCloseDelay * 1000);
-        }
-        this.$nextTick(() => {
-            this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height}px`;
-        });
+        this.updateStyles();
+        this.execAutoClose();
     },
 
     methods: {
+        updateStyles() {
+            this.$nextTick(() => {
+                this.$refs.line.style.height = `${
+                    this.$refs.wrapper.getBoundingClientRect().height
+                }px`;
+            });
+        },
+        execAutoClose() {
+            if (this.autoClose) {
+                setTimeout(() => {
+                    this.close();
+                }, this.autoCloseDelay * 1000);
+            }
+        },
+
         close() {
             this.$el.remove();
             this.$destroy();
@@ -88,9 +97,15 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     border-radius: 4px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
     padding: 0 16px;
+    > .message {
+        padding: 10px;
+    }
     > .line {
         border-left: 1px solid #666;
         margin: 0 16px;
+    }
+    > .close {
+        flex-shrink: 0;
     }
 }
 </style>
