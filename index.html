@@ -6,6 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Document</title>
         <style>
+            * {
+                outline: 1px solid limegreen;
+            }
             img {
                 max-width: 100%;
             }
@@ -15,104 +18,22 @@
                 margin: 20px;
             }
         </style>
-        <style>
-            .demo {
-                background-color: #FFC67D;
-                border: 1px solid #666;
-                min-height: 100px;
-            }
-            .sider {
-                width: 200px;
-                background-color: #e8b7ff;
-            }
-            .header {
-                min-height: 100px;
-                background-color: #EBA4A0;
-            }
-            .content {
-                min-height: 100px;
-                background-color: #9BB0E8;
-            }
-            .footer {
-                min-height: 100px;
-                background-color: #FFC67D;
-            }
-        </style>
     </head>
     <body>
         <div id="app">
-            <div class="box">
-                <button @click="showToast('top')">top</button>
-                <button @click="showToast('center')">center</button>
-                <button @click="showToast('bottom')">bottom</button>
-            </div>
-            <div>
-                <gulu-layout style="height: 100vh">
-                    <gulu-sider>sider</gulu-sider>
-                    <gulu-layout>
-                        <gulu-header>header</gulu-header>
-                        <gulu-content>content</gulu-content>
-                        <gulu-footer>footer</gulu-footer>
-                    </gulu-layout>
-                </gulu-footer>
-            </div>
-            <div class="box">
-                <gulu-row>
-                    <gulu-col span="24" :narrow-pc="{span: 8}">
-                        <div class="demo"></div>
-                    </gulu-col>
-                    <gulu-col span="24" :narrow-pc="{span: 8}">
-                        <div class="demo"></div>
-                    </gulu-col>
-                    <gulu-col span="24" :narrow-pc="{span: 8}">
-                        <div class="demo"></div>
-                    </gulu-col>
-                    <gulu-col span="24" :narrow-pc="{span: 8}">
-                        <div class="demo"></div>
-                    </gulu-col>
-                </gulu-row>
-            </div>
-
-            <div class="box">
-                <gulu-input value="input组件"></gulu-input>
-                <gulu-input value="input组件" disabled></gulu-input>
-                <gulu-input value="input组件" error="请输入"></gulu-input>
-            </div>
-            <div class="box">
-                <gulu-input v-model="value"></gulu-input>
-            </div>
-            <div>
-                <gulu-button
-                    icon-position="left"
-                    :loading="loading"
-                    @click="loading = !loading"
-                >
-                    保存
-                </gulu-button>
-                <gulu-button
-                    icon="settings"
-                    icon-position="left"
-                    :loading="loading"
-                    @click="loading = !loading"
-                >
-                    提交
-                </gulu-button>
-                <gulu-button icon="thumbs-up" icon-position="right" loading>
-                    点赞
-                </gulu-button>
-
-                <gulu-button icon="download" icon-position="right">
-                    下载文件
-                </gulu-button>
-
-                <gulu-button-group>
-                    <gulu-button icon="left">上一页</gulu-button>
-                    <gulu-button>第 3 页</gulu-button>
-                    <gulu-button icon="right" icon-position="right">
-                        下一页
-                    </gulu-button>
-                </gulu-button-group>
-            </div>
+            <gulu-tabs :selected.sync="selected">
+                <gulu-tabs-head>
+                    <gulu-tabs-item name="onepeace">
+                        <gulu-icon icon="settings"></gulu-icon>
+                        海贼
+                    </gulu-tabs-item>
+                    <gulu-tabs-item name="naruto">火影</gulu-tabs-item>
+                </gulu-tabs-head>
+                <gulu-tabs-body>
+                    <gulu-tabs-pane name="onepeace">海贼王更新到 600 集了！</gulu-tabs-pane>
+                    <gulu-tabs-pane name="naruto">鸣人练成螺旋丸！</gulu-tabs-pane>
+                </gulu-tabs-body>
+            </gulu-tabs>
         </div>
 
         <script src="./src/main.js"></script>

@@ -12,6 +12,11 @@ import Footer from "./footer";
 import Sider from "./sider";
 import Toast from "./toast";
 import plugin from "./plugin";
+import Tabs from "./tabs";
+import TabsHead from "./tabs-head";
+import TabsBody from "./tabs-body";
+import TabsItem from "./tabs-item";
+import TabsPane from "./tabs-pane";
 
 Vue.use(plugin);
 
@@ -27,13 +32,19 @@ Vue.component("gulu-content", Content);
 Vue.component("gulu-footer", Footer);
 Vue.component("gulu-sider", Sider);
 Vue.component("gulu-toast", Toast);
+Vue.component("gulu-tabs", Tabs);
+Vue.component("gulu-tabs-head", TabsHead);
+Vue.component("gulu-tabs-body", TabsBody);
+Vue.component("gulu-tabs-item", TabsItem);
+Vue.component("gulu-tabs-pane", TabsPane);
 
 new Vue({
     el: "#app",
     data: {
         message: "这是 message",
         loading: false,
-        value: ""
+        value: "",
+        selected: "naruto"
     },
     created() {},
     methods: {
