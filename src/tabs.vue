@@ -23,20 +23,21 @@ export default {
             }
         }
     },
+    
     data() {
         return {
             eventBus: new Vue()
         };
     },
+
     provide() {
         return {
             eventBus: this.eventBus
         };
     },
-    created() {
-        setTimeout(() => {
-            this.$emit("update:selected", "onepeace");
-        }, 2000);
+
+    mounted() {
+        this.eventBus.$emit("update:selected", this.selected)
     }
 };
 </script>

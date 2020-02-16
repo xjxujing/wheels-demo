@@ -23,6 +23,9 @@
         <div id="app">
             <gulu-tabs :selected.sync="selected">
                 <gulu-tabs-head>
+                    <template slot="actions">
+                        <gulu-button>设置</gulu-button>
+                    </template>
                     <gulu-tabs-item name="onepeace">
                         <gulu-icon icon="settings"></gulu-icon>
                         海贼

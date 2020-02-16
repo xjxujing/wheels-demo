@@ -1,6 +1,10 @@
 <template>
     <div class="tabs-head">
         <slot></slot>
+        <div class="actions-wrapper">
+            <slot name="actions"></slot>
+        </div>
+        
     </div>
 </template>
 
@@ -8,9 +12,6 @@
 export default {
     name: "GuluTabsHead",
     inject: ["eventBus"],
-    created() {
-        console.log("tabs-head 的 => ", this.eventBus);
-    }
 };
 </script>
 
@@ -21,5 +22,8 @@ $tabs-height: 40px;
     height: $tabs-height;
     justify-content: flex-start;
     align-items: center;
+    > .actions-wrapper {
+        margin-left: auto;
+    }
 }
 </style>

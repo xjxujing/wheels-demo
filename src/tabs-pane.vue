@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-pane">
+    <div class="tabs-pane" :class="paneClass" v-if="active">
         <slot></slot>
     </div>
 </template>
@@ -8,10 +8,36 @@
 export default {
     name: "GuluTabsPane",
     inject: ["eventBus"],
-    created() {
-        console.log("tabs-pane 的 => ", this.eventBus);
+
+    props: {
+        name: {
+            type: String | Number
+        }
     },
+
+    data() {
+        return {
+            active: false
+        };
+    },
+    computed: {
+        paneClass() {
+            return {active: this.active};
+        }
+    },
+
+    created() {
+        this.eventBus.$on("updated:selected", name => {
+            this.active = this.name === name;
+        });
+    }
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.tabs-pane {
+    &.active {
+        background-color: red;
+    }
+}
+</style>

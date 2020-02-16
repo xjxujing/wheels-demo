@@ -63,6 +63,12 @@ new Vue({
                 },
                 position: position
             });
+        },
+
+        yyy(e) {
+            console.log(e)
         }
+
+    
     }
 });
