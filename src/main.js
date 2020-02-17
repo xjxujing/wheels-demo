@@ -44,7 +44,7 @@ new Vue({
         message: "这是 message",
         loading: false,
         value: "",
-        selected: "naruto"
+        selected: "onepeace"
     },
     created() {},
     methods: {
