@@ -27,7 +27,7 @@ export default {
     },
 
     created() {
-        this.eventBus.$on("updated:selected", name => {
+        this.eventBus.$on("update:selected", name => {
             this.active = this.name === name;
         });
     }
@@ -36,8 +36,8 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-pane {
+    padding: 1em;
     &.active {
-        background-color: red;
     }
 }
 </style>
