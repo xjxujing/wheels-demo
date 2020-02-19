@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" :class="itemClass" @click="handleClick">
+    <div class="tabs-item" :class="itemClass" @click="handleClick" :data-name="name">
         <slot></slot>
     </div>
 </template>
@@ -35,15 +35,16 @@ export default {
     },
 
     created() {
-        this.eventBus.$on("update:selected", name => {
-            this.active = this.name === name;
-        });
+        if (this.eventBus) {
+            this.eventBus.$on("update:selected", name => {
+                this.active = this.name === name;
+            });
+        }
     },
 
     methods: {
         handleClick() {
-            if(this.disabled) return
-            console.log(this.disabled)
+            if (this.disabled) return;
             this.eventBus.$emit("update:selected", this.name, this);
         }
     }
