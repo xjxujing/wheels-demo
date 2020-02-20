@@ -17,6 +17,7 @@ import TabsHead from "./tabs-head";
 import TabsBody from "./tabs-body";
 import TabsItem from "./tabs-item";
 import TabsPane from "./tabs-pane";
+import Popover from "./popover"
 
 Vue.use(plugin);
 
@@ -37,6 +38,7 @@ Vue.component("gulu-tabs-head", TabsHead);
 Vue.component("gulu-tabs-body", TabsBody);
 Vue.component("gulu-tabs-item", TabsItem);
 Vue.component("gulu-tabs-pane", TabsPane);
+Vue.component("gulu-popover", Popover);
 
 new Vue({
     el: "#app",

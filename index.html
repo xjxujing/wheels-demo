@@ -9,6 +9,8 @@
             * {
                 margin: 0;
                 padding: 0;
+                box-sizing: border-box;
+                outline: 1px solid red;
             }
             img {
                 max-width: 100%;
@@ -22,26 +24,42 @@
     </head>
     <body>
         <div id="app">
-            <gulu-tabs :selected.sync="selected">
-                <gulu-tabs-head>
-                    <template slot="actions">
-                        <button>设置</button>
+            <div id="box">
+                <gulu-tabs :selected.sync="selected">
+                    <gulu-tabs-head>
+                        <template slot="actions">
+                            <button>设置</button>
+                        </template>
+                        <gulu-tabs-item name="gintama">
+                            银魂
+                        </gulu-tabs-item>
+                        <gulu-tabs-item name="onepeace">
+                            <gulu-icon icon="settings"></gulu-icon>
+                            海贼
+                        </gulu-tabs-item>
+                        <gulu-tabs-item name="naruto" disabled>火影</gulu-tabs-item>
+                    </gulu-tabs-head>
+                    <gulu-tabs-body>
+                        <gulu-tabs-pane name="onepeace">海贼王更新到 600 集了！</gulu-tabs-pane>
+                        <gulu-tabs-pane name="naruto">鸣人练成螺旋丸！</gulu-tabs-pane>
+                        <gulu-tabs-pane name="gintama">夜兔族超级强</gulu-tabs-pane>
+                    </gulu-tabs-body>
+                </gulu-tabs>
+            </div>
+            <div class="box">
+                <gulu-popover>
+                    <template slot="content">
+                        <div>哈哈哈哈</div>
                     </template>
-                    <gulu-tabs-item name="gintama">
-                        银魂
-                    </gulu-tabs-item>
-                    <gulu-tabs-item name="onepeace">
-                        <gulu-icon icon="settings"></gulu-icon>
-                        海贼
-                    </gulu-tabs-item>
-                    <gulu-tabs-item name="naruto" disabled>火影</gulu-tabs-item>
-                </gulu-tabs-head>
-                <gulu-tabs-body>
-                    <gulu-tabs-pane name="onepeace">海贼王更新到 600 集了！</gulu-tabs-pane>
-                    <gulu-tabs-pane name="naruto">鸣人练成螺旋丸！</gulu-tabs-pane>
-                    <gulu-tabs-pane name="gintama">夜兔族超级强</gulu-tabs-pane>
-                </gulu-tabs-body>
-            </gulu-tabs>
+                    <button>点我</button>
+                </gulu-popover>
+                <gulu-popover>
+                    <template slot="content">
+                        <div>哈哈哈哈</div>
+                    </template>
+                    <button>点我</button>
+                </gulu-popover>
+            </div>
         </div>
 
         <script src="./src/main.js"></script>
