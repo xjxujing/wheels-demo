@@ -10,7 +10,7 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                outline: 1px solid red;
+                /* outline: 1px solid red; */
             }
             img {
                 max-width: 100%;
@@ -21,9 +21,96 @@
                 margin: 20px;
             }
         </style>
+        <style>
+            .demo {
+                background-color: #ffc67d;
+                border: 1px solid #666;
+                min-height: 100px;
+            }
+            .sider {
+                width: 200px;
+                background-color: #e8b7ff;
+            }
+            .header {
+                min-height: 100px;
+                background-color: #eba4a0;
+            }
+            .content {
+                min-height: 100px;
+                background-color: #9bb0e8;
+            }
+            .footer {
+                min-height: 100px;
+                background-color: #ffc67d;
+            }
+        </style>
     </head>
     <body>
         <div id="app">
+            <h3>button</h3>
+            <div class="box">
+                <gulu-button icon-position="left" :loading="loading" @click="loading = !loading">
+                    保存
+                </gulu-button>
+                <gulu-button
+                    icon="settings"
+                    icon-position="left"
+                    :loading="loading"
+                    @click="loading = !loading"
+                >
+                    提交
+                </gulu-button>
+                <gulu-button icon="thumbs-up" icon-position="right" loading>
+                    点赞
+                </gulu-button>
+
+                <gulu-button icon="download" icon-position="right">
+                    下载文件
+                </gulu-button>
+
+                <gulu-button-group>
+                    <gulu-button icon="left">上一页</gulu-button>
+                    <gulu-button>第 3 页</gulu-button>
+                    <gulu-button icon="right" icon-position="right">
+                        下一页
+                    </gulu-button>
+                </gulu-button-group>
+            </div>
+
+            <h3>input</h3>
+            <div class="box">
+                <gulu-input v-model="value"></gulu-input>
+                <gulu-input value="input组件"></gulu-input>
+                <gulu-input value="input组件" disabled></gulu-input>
+                <gulu-input value="input组件" error="请输入"></gulu-input>
+            </div>
+
+            <h3>layout</h3>
+            <div class="box">
+                <gulu-row>
+                    <gulu-col span="24" :narrow-pc="{span: 8}">
+                        <div class="demo"></div>
+                    </gulu-col>
+                    <gulu-col span="24" :narrow-pc="{span: 8}">
+                        <div class="demo"></div>
+                    </gulu-col>
+                    <gulu-col span="24" :narrow-pc="{span: 8}">
+                        <div class="demo"></div>
+                    </gulu-col>
+                    <gulu-col span="24" :narrow-pc="{span: 8}">
+                        <div class="demo"></div>
+                    </gulu-col>
+                </gulu-row>
+            </div>
+
+            <h3>toast</h3>
+            <div class="box">
+                <button @click="showToast('top')">top</button>
+                <button @click="showToast('center')">center</button>
+                <button @click="showToast('bottom')">bottom</button>
+            </div>
+
+            <h3>tabs</h3>
             <div id="box">
                 <gulu-tabs :selected.sync="selected">
                     <gulu-tabs-head>
@@ -46,6 +133,8 @@
                     </gulu-tabs-body>
                 </gulu-tabs>
             </div>
+
+            <h3>popover</h3>
             <div class="box" style="overflow: hidden;">
                 <gulu-popover>
                     <template slot="content">
