@@ -1,4 +1,5 @@
 module.exports = {
+    base: "/wheels-demo/",
     title: "我的咕噜文档",
     description: "Just playing around",
     themeConfig: {
