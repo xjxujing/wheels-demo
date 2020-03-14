@@ -4,6 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
+        "start": "parcel index.html --no-cache",
         "test": "parcel build test/* --no-cache --no-minify & karma start --single-run",
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs"
