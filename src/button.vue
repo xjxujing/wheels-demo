@@ -49,9 +49,6 @@ export default {
     justify-content: center;
     align-items: center;
     vertical-align: middle;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     &:hover {
         border-color: $border-color-hover;
     }
