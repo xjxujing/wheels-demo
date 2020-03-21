@@ -3,6 +3,10 @@ title: Button
 ---
 # 按钮
 
+ 
 <ClientOnly>
-  <button-demos></button-demos>
+  <button-demos />
 </ClientOnly>
+
+
+<<< @/docs/.vuepress/components/button-demos.vue
