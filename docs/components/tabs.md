@@ -10,10 +10,4 @@ title: Tabs
 
 
  <<< @/docs/.vuepress/components/tabs-demos.vue
-
-<script>
-  import TabsDemos from "../.vuepress/components/tabs-demos"
-  export default {
-    components: { TabsDemos }
-  }
-</script>
+ 
