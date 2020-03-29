@@ -1,5 +1,5 @@
 <template>
-  <gulu-tabs :selected.sync="selected">
+  <gulu-tabs :selected.sync="selected" direction="vertical">
     <gulu-tabs-head>
       <template slot="actions">
         <button>设置</button>
