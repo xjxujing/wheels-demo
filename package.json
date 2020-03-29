@@ -1,7 +1,7 @@
 {
-    "name": "my-wheels",
-    "version": "0.1.0",
-    "private": true,
+    "name": "@kokojing/wheels-ui-test",
+    "version": "0.0.3",
+    "main": "dist/js/app.f65d2422.js",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
