@@ -13,7 +13,7 @@ module.exports = function(config) {
         },
 
         // list of files / patterns to load in the browser
-        files: ["dist/**/*.test.js", "dist/**/*.test.css"],
+        files: ["dist/**/*.tests.js", "dist/**/*.tests.css"],
 
         // list of files / patterns to exclude
         exclude: [],
@@ -22,7 +22,7 @@ module.exports = function(config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {},
 
-        // test results reporter to use
+        // tests results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         reporters: ["progress"],
