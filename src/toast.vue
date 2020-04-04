@@ -1,7 +1,7 @@
 <template>
     <div class="toast" ref="wrapper" :class="toastClass">
         <div class="message">
-            <slot v-if="!enabelHtml"></slot>
+            <slot v-if="!enableHtml"></slot>
             <div v-else v-html="this.$slots.default[0]"></div>
         </div>
         <div class="line" ref="line"></div>
@@ -33,7 +33,7 @@ export default {
                 };
             }
         },
-        enabelHtml: {
+        enableHtml: {
             type: Boolean,
             default: false
         },
@@ -41,7 +41,7 @@ export default {
             type: String,
             default: "top",
             validator(value) {
-                return ["top", "bottom", "center", "middle"].indexOf(value) >= 0;
+                return ["top", "bottom", "center"].indexOf(value) >= 0;
             }
         }
     },
@@ -138,6 +138,7 @@ $animation-time: 1s;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
     padding: 0 16px;
     transform: translateX(-50%);
+    z-index: 30;
     &.top {
         top: 0;
         border-top-left-radius: 0;

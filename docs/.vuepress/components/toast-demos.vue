@@ -1,65 +1,56 @@
 <template>
-  <div class="button-demos">
-    <gulu-button>默认按钮</gulu-button>
-    <gulu-button icon="thumbs-up">点赞</gulu-button>
-    <gulu-button icon-position="right" icon="download">下载</gulu-button>
-    <gulu-button
-      icon="settings"
-      icon-position="left"
-      :loading="loading"
-      @click="loading = !loading"
-    >
-      提交
-    </gulu-button>
-
-    <gulu-button-group>
-      <gulu-button icon="left">上一页</gulu-button>
-      <gulu-button>第 3 页</gulu-button>
-      <gulu-button icon="right" icon-position="right">
-        下一页
-      </gulu-button>
-    </gulu-button-group>
-
-    哈哈
-    <button @click="showToast('top')">top</button>
-    <button @click="showToast('center')">center</button>
-    <button @click="showToast('bottom')">bottom</button>
+  <div class="demos-wrapper">
+    <gulu-button @click="showToast('top')">top</gulu-button>
+    <gulu-button @click="showToast('center')">center</gulu-button>
+    <gulu-button @click="doNotAutoClose('bottom')">不会自动关闭</gulu-button>
+    <hr />
+    <gulu-button @click="definedCloseButton">点我</gulu-button>
   </div>
 </template>
 
 <script>
   import Button from "../../../src/button"
-  import ButtonGroup from "../../../src/button-group"
   import plugin from "../../../src/plugin"
   import Vue from 'vue'
 
   Vue.use(plugin)
 
   export default {
-    name: "ButtonDemos",
+    name: "ToastDemos",
 
     components: {
-      "gulu-button": Button,
-      "gulu-button-group": ButtonGroup,
-    },
-    data() {
-      return {
-        loading: false
-      }
+      "gulu-button": Button
     },
 
     methods: {
-      showToast(type) {
-        console.log(123)
-        this.$toast("haha")
+      showToast(position) {
+       this.$toast("你好呀！", {
+          position: position
+       })
+      },
+      doNotAutoClose(position) {
+        this.$toast("你好呀！", {
+          position: position,
+          autoClose: false
+        })
+      },
+      definedCloseButton() {
+        this.$toast("你喜欢吃梨子吗", {
+          closeButton: {
+            text: "喜欢",
+            callback: () => {
+              alert("你说喜欢！")
+            }
+          }
+        })
       }
-
     }
+
   }
 </script>
 
 <style scoped>
-  .button-demos {
+  .demos-wrapper {
     max-width: 800px;
     margin: 30px auto;
     border-radius: 4px;

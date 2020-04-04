@@ -43,11 +43,11 @@ describe("Toast", () => {
             expect(callback).to.have.been.called;
         });
 
-        it("接受 enabelHtml", () => {
+        it("接受 enableHtml", () => {
             const Constructor = Vue.extend(Toast);
             const vm = new Constructor({
                 propsData: {
-                    enabelHtml: true
+                    enableHtml: true
                 }
             });
             vm.$slots.default = [`<strong id="test">hi</strong>`];
