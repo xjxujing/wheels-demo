@@ -4,7 +4,7 @@
     <gulu-button @click="showToast('center')">center</gulu-button>
     <gulu-button @click="doNotAutoClose('bottom')">不会自动关闭</gulu-button>
     <hr />
-    <gulu-button @click="definedCloseButton">点我</gulu-button>
+    <gulu-button @click="definedCloseButton">自定义关闭</gulu-button>
   </div>
 </template>
 

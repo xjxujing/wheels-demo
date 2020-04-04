@@ -13,7 +13,7 @@ module.exports = {
       {
         title: "组件",
         collapsable: false,
-        children: ["/components/button", "/components/input", "/components/tabs", "/components/toast"]
+        children: ["/components/button", "/components/input", "/components/tabs", "/components/toast", "/components/grid"]
       }
     ]
   }

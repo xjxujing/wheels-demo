@@ -50,43 +50,6 @@
     </head>
     <body>
         <div id="app">
-            <h3>button</h3>
-            <div class="box">
-                <gulu-button icon-position="left" :loading="loading" @click="loading = !loading">
-                    保存
-                </gulu-button>
-                <gulu-button
-                    icon="settings"
-                    icon-position="left"
-                    :loading="loading"
-                    @click="loading = !loading"
-                >
-                    提交
-                </gulu-button>
-                <gulu-button icon="thumbs-up" icon-position="right" loading>
-                    点赞
-                </gulu-button>
-
-                <gulu-button icon="download" icon-position="right">
-                    下载文件
-                </gulu-button>
-
-                <gulu-button-group>
-                    <gulu-button icon="left">上一页</gulu-button>
-                    <gulu-button>第 3 页</gulu-button>
-                    <gulu-button icon="right" icon-position="right">
-                        下一页
-                    </gulu-button>
-                </gulu-button-group>
-            </div>
-
-            <h3>input</h3>
-            <div class="box">
-                <gulu-input v-model="value"></gulu-input>
-                <gulu-input value="input组件"></gulu-input>
-                <gulu-input value="input组件" disabled></gulu-input>
-                <gulu-input value="input组件" error="请输入"></gulu-input>
-            </div>
 
             <h3>layout</h3>
             <div class="box">
@@ -115,36 +78,6 @@
                 </gulu-layout>
             </div>
 
-            <h3>toast</h3>
-            <div class="box">
-                <button @click="showToast('top')">top</button>
-                <button @click="showToast('center')">center</button>
-                <button @click="showToast('bottom')">bottom</button>
-            </div>
-
-            <h3>tabs</h3>
-            <div id="box">
-                <gulu-tabs :selected.sync="selected">
-                    <gulu-tabs-head>
-                        <template slot="actions">
-                            <button>设置</button>
-                        </template>
-                        <gulu-tabs-item name="gintama">
-                            银魂
-                        </gulu-tabs-item>
-                        <gulu-tabs-item name="onepeace">
-                            <gulu-icon icon="settings"></gulu-icon>
-                            海贼
-                        </gulu-tabs-item>
-                        <gulu-tabs-item name="naruto" disabled>火影</gulu-tabs-item>
-                    </gulu-tabs-head>
-                    <gulu-tabs-body>
-                        <gulu-tabs-pane name="onepeace">海贼王更新到 600 集了！</gulu-tabs-pane>
-                        <gulu-tabs-pane name="naruto">鸣人练成螺旋丸！</gulu-tabs-pane>
-                        <gulu-tabs-pane name="gintama">夜兔族超级强</gulu-tabs-pane>
-                    </gulu-tabs-body>
-                </gulu-tabs>
-            </div>
 
             <h3>popover</h3>
             <div class="box" style="overflow: hidden;">
