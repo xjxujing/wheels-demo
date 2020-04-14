@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Toast - 提示 | 我的咕噜文档</title>
+    <meta name="description" content="Just playing around">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/wheels-demo/assets/css/0.styles.75ed9575.css" as="style"><link rel="preload" href="/wheels-demo/assets/js/app.cb5a86db.js" as="script"><link rel="preload" href="/wheels-demo/assets/js/2.cebdf642.js" as="script"><link rel="preload" href="/wheels-demo/assets/js/15.ffda64ff.js" as="script"><link rel="prefetch" href="/wheels-demo/assets/js/10.bcab0cea.js"><link rel="prefetch" href="/wheels-demo/assets/js/11.aa85c7d9.js"><link rel="prefetch" href="/wheels-demo/assets/js/12.c72e268f.js"><link rel="prefetch" href="/wheels-demo/assets/js/13.dab4a022.js"><link rel="prefetch" href="/wheels-demo/assets/js/14.ef5063b2.js"><link rel="prefetch" href="/wheels-demo/assets/js/16.5216cdd6.js"><link rel="prefetch" href="/wheels-demo/assets/js/17.c7b05b67.js"><link rel="prefetch" href="/wheels-demo/assets/js/18.0e046443.js"><link rel="prefetch" href="/wheels-demo/assets/js/19.09b9f9a2.js"><link rel="prefetch" href="/wheels-demo/assets/js/3.bed9673a.js"><link rel="prefetch" href="/wheels-demo/assets/js/4.6c622122.js"><link rel="prefetch" href="/wheels-demo/assets/js/5.5a2856c4.js"><link rel="prefetch" href="/wheels-demo/assets/js/6.6d2c99fd.js"><link rel="prefetch" href="/wheels-demo/assets/js/7.40906da0.js"><link rel="prefetch" href="/wheels-demo/assets/js/8.d19c6073.js"><link rel="prefetch" href="/wheels-demo/assets/js/9.0dbd2dcf.js">
+    <link rel="stylesheet" href="/wheels-demo/assets/css/0.styles.75ed9575.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/wheels-demo/" class="home-link router-link-active"><!----> <span class="site-name">我的咕噜文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/wheels-demo/install/" class="sidebar-link">安装</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/wheels-demo/components/button.html" class="sidebar-link">Button - 按钮</a></li><li><a href="/wheels-demo/components/input.html" class="sidebar-link">Input - 输入框</a></li><li><a href="/wheels-demo/components/tabs.html" class="sidebar-link">Tabs - 选项卡</a></li><li><a href="/wheels-demo/components/toast.html" class="active sidebar-link">Toast - 提示</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/wheels-demo/components/toast.html#示例" class="sidebar-link">示例</a></li><li class="sidebar-sub-header"><a href="/wheels-demo/components/toast.html#api" class="sidebar-link">API</a></li></ul></li><li><a href="/wheels-demo/components/grid.html" class="sidebar-link">Grid - 栅格</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="提示"><a href="#提示" class="header-anchor">#</a> 提示</h1> <h2 id="示例"><a href="#示例" class="header-anchor">#</a> 示例</h2> <!----> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>gulu-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>showToast('top')<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>top<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>gulu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>gulu-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>showToast('center')<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>center<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>gulu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>gulu-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>doNotAutoClose('bottom')<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>不会自动关闭<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>gulu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>gulu-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>definedCloseButton<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>自定义关闭<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>gulu-button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Button<span class="token punctuation">,</span> plugin<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../../../src/button&quot;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;@kokojing/wheels-ui-test/lib/wheels.css&quot;</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>plugin<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;ToastDemos&quot;</span><span class="token punctuation">,</span>
+
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;gulu-button&quot;</span><span class="token operator">:</span> Button
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">showToast</span><span class="token punctuation">(</span><span class="token parameter">position</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$toast</span><span class="token punctuation">(</span><span class="token string">&quot;你好呀！&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          position<span class="token operator">:</span> position
+       <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">doNotAutoClose</span><span class="token punctuation">(</span><span class="token parameter">position</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$toast</span><span class="token punctuation">(</span><span class="token string">&quot;你好呀！&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          position<span class="token operator">:</span> position<span class="token punctuation">,</span>
+          autoClose<span class="token operator">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">definedCloseButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$toast</span><span class="token punctuation">(</span><span class="token string">&quot;你喜欢吃梨子吗&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          closeButton<span class="token operator">:</span> <span class="token punctuation">{</span>
+            text<span class="token operator">:</span> <span class="token string">&quot;喜欢&quot;</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&quot;你说喜欢！&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="api"><a href="#api" class="header-anchor">#</a> API</h2> <table><thead><tr><th>属性</th> <th>说明</th> <th>类型</th> <th>可选值</th> <th>默认值</th></tr></thead> <tbody><tr><td>autoClose</td> <td>是否自动关闭</td> <td>boolean</td> <td>true / false</td> <td>true</td></tr> <tr><td>autoCloseDelay</td> <td>自动关闭时间</td> <td>number</td> <td></td> <td>3</td></tr> <tr><td>closeButton</td> <td>自定义关闭按钮内容</td> <td>object</td> <td></td> <td>{    text: &quot;关闭&quot;,    callback: undefined};</td></tr> <tr><td>enableHtml</td> <td></td> <td>boolean</td> <td></td> <td></td></tr> <tr><td>position</td> <td>提示位置</td> <td>string</td> <td>top / bottom / center</td> <td>top</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/wheels-demo/components/tabs.html" class="prev">
+        Tabs - 选项卡
+      </a></span> <span class="next"><a href="/wheels-demo/components/grid.html">
+        Grid - 栅格
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/wheels-demo/assets/js/app.cb5a86db.js" defer></script><script src="/wheels-demo/assets/js/2.cebdf642.js" defer></script><script src="/wheels-demo/assets/js/15.ffda64ff.js" defer></script>
+  </body>
+</html>
