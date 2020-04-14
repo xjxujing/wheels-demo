@@ -1,17 +1,20 @@
 <template>
   <div class="app">
-    <gulu-cascader :source="source" :selected="selected" @update:selected="selected = $event"></gulu-cascader>
+<!--    <gulu-cascader :source="source" :selected="selected" @update:selected="selected = $event"></gulu-cascader>-->
+    <gulu-button>ahhah</gulu-button>
   </div>
 
 </template>
 
 <script>
   import Cascader from "./cascader"
+  import Button from "./button"
 
   export default {
     name: "Demo",
     components: {
-      "gulu-cascader": Cascader
+      "gulu-cascader": Cascader,
+      "gulu-button": Button
     },
     data() {
       return {
