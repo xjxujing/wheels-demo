@@ -1,6 +1,6 @@
 {
     "name": "@kokojing/wheels-ui-test",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "UI components Base on vue.js",
     "main": "lib/wheels.umd.js",
     "license": "MIT",
