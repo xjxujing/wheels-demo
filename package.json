@@ -1,6 +1,6 @@
 {
     "name": "@kokojing/wheels-ui-test",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "main": "dist/js/app.f65d2422.js",
     "scripts": {
         "serve": "vue-cli-service serve",
