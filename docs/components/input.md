@@ -9,10 +9,37 @@ title: Input - 输入框
   <input-demos />
 </ClientOnly>
 
+```html
+<div>
+  <gulu-input v-model="value"></gulu-input>
+</div>
+<div>
+  <gulu-input value="input 组件"></gulu-input>
+</div>
+<div>
+  <gulu-input value="input 组件" disabled></gulu-input>
+</div>
+<div>
+  <gulu-input value="input 组件" error="请输入"></gulu-input>
+</div>
+```
 
-::: details 点击查看源码
- <<< @/docs/.vuepress/components/input-demos.vue
-:::
+```javascript
+import { Input } from "@kokojing/wheels-ui-test"
+import "@kokojing/wheels-ui-test/lib/wheels.css"
+
+export default {
+    components: {
+      "gulu-input": Input
+    },
+    
+    data() {
+      return {
+        value: ""
+      }
+    },
+}
+```
 
 ## API
 

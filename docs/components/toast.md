@@ -10,9 +10,53 @@ title: Toast - 提示
 </ClientOnly>
 
 
-::: details 点击查看源码
-<<< @/docs/.vuepress/components/toast-demos.vue
-:::
+```html
+<gulu-button @click="showToast('top')">top</gulu-button>
+<gulu-button @click="showToast('center')">center</gulu-button>
+<gulu-button @click="doNotAutoClose('bottom')">不会自动关闭</gulu-button>
+<hr />
+<gulu-button @click="definedCloseButton">自定义关闭</gulu-button>
+```
+
+```javascript
+import {Button, plugin} from "../../../src/button"
+import "@kokojing/wheels-ui-test/lib/wheels.css"
+import Vue from 'vue'
+Vue.use(plugin)
+
+export default {
+    name: "ToastDemos",
+
+    components: {
+      "gulu-button": Button
+    },
+
+    methods: {
+      showToast(position) {
+       this.$toast("你好呀！", {
+          position: position
+       })
+      },
+      doNotAutoClose(position) {
+        this.$toast("你好呀！", {
+          position: position,
+          autoClose: false
+        })
+      },
+      definedCloseButton() {
+        this.$toast("你喜欢吃梨子吗", {
+          closeButton: {
+            text: "喜欢",
+            callback: () => {
+              alert("你说喜欢！")
+            }
+          }
+        })
+      }
+    }
+
+}
+```
 
 
 ## API
