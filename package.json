@@ -1,10 +1,14 @@
 {
     "name": "@kokojing/wheels-ui-test",
-    "version": "0.0.7",
-    "main": "dist/js/app.f65d2422.js",
+    "version": "0.0.8",
+    "description": "UI components Base on vue.js",
+    "main": "lib/wheels.umd.js",
+    "license": "MIT",
+    "author": "kokojing <xujing_xj@foxmail.como>",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
+        "lib": "vue-cli-service build --target lib --name wheels --dest lib index.js",
         "test:unit": "vue-cli-service test:unit",
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs"
