@@ -7,7 +7,7 @@ module.exports = {
       {
         title: "入门",
         collapsable: false,
-        children: ["/install/", "/get-started/"]
+        children: ["/install/"]
       },
 
       {

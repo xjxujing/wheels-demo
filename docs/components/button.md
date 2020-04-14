@@ -10,10 +10,43 @@ title: Button - 按钮
 </ClientOnly>
 
 
-::: details 点击查看源码
-<<< @/docs/.vuepress/components/button-demos.vue
-:::
+```html
+<gulu-button>默认按钮</gulu-button>
+<gulu-button icon="thumbs-up">点赞</gulu-button>
+<gulu-button icon-position="right" icon="download">下载</gulu-button>
 
+<gulu-button
+  icon="settings"
+  icon-position="left"
+  :loading="loading"
+  @click="loading = !loading"
+>
+  提交
+</gulu-button>
+
+<gulu-button-group>
+  <gulu-button icon="left">上一页</gulu-button>
+  <gulu-button>第 3 页</gulu-button>
+  <gulu-button icon="right" icon-position="right">
+    下一页
+  </gulu-button>
+</gulu-button-group>
+```
+
+```javascript
+import { Button } from "@kokojing/wheels-ui-test"
+import "@kokojing/wheels-ui-test/lib/wheels.css"
+export default  {
+  components: {
+    "gulu-button": Button
+  },
+  data() {
+    return {
+      loading: false
+    }
+  }
+}
+```
 
 ## API
 
