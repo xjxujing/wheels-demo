@@ -1,7 +1,10 @@
 <template>
   <div class="app">
-<!--    <gulu-cascader :source="source" :selected="selected" @update:selected="selected = $event"></gulu-cascader>-->
-    <gulu-button>ahhah</gulu-button>
+    <!--    <gulu-cascader :source="source" :selected="selected" @update:selected="selected = $event"></gulu-cascader>-->
+
+    <gulu-table :columns="columns" :dataSource="dataSource" compact @changeItem="x"></gulu-table>
+    <hr>
+    <gulu-table :columns="columns" :dataSource="dataSource" :striped="false"></gulu-table>
   </div>
 
 </template>
@@ -10,14 +13,31 @@
   import Cascader from "./cascader"
   import Button from "./button"
 
+  import GuluTable from "./table"
+
   export default {
     name: "Demo",
     components: {
       "gulu-cascader": Cascader,
-      "gulu-button": Button
+      "gulu-button": Button,
+      "gulu-table": GuluTable
     },
     data() {
       return {
+        columns: [
+          {text: "姓名", field: "name"},
+          {text: "分数", field: "score"},
+        ],
+        dataSource: [
+          {id: 1, name: "lucky", score: 100},
+          {id: 2, name: "apple", score: 80},
+          {id: 3, name: "dream", score: 100},
+          {id: 4, name: "bucky", score: 80},
+          {id: 5, name: "nana", score: 100},
+          {id: 6, name: "frank", score: 80},
+        ],
+
+        // 下面是三级联动
         selected: [],
         source: [
           {
@@ -63,6 +83,13 @@
         ]
       }
     },
+
+    methods: {
+      x(obj) {
+        console.log(obj)
+      }
+    }
+
   }
 
 </script>
